@@ -10,11 +10,10 @@ public class DamageDealing : MonoBehaviour
     {
         return damage;
     }
-    public void Hit(LayerMask layer)
+    public void Hit()
     {
-        if("player" == LayerMask.LayerToName(layer))
-        {
+        
             Destroy(gameObject);
-        }
+        
     }
 }

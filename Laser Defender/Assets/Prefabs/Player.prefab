@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2028652561
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e0e13dce960b4bb4db995b56a98b0c39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7955746464485977197}
   - component: {fileID: 6822945050822283992}
   - component: {fileID: 2277705447485249760}
+  - component: {fileID: -5775181701139148837}
   - component: {fileID: 3353443968199065867}
   - component: {fileID: 6754342390255425954}
   - component: {fileID: 5655520632905667600}
@@ -189,6 +190,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &-5775181701139148837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7456818049294719897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6d6317e95d9c74c8a11384d7e8e176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1625208217544360693, guid: 174df78dd94bfa741a8a71e88f32e54f, type: 3}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  shootingFrequency: 10
 --- !u!114 &3353443968199065867
 MonoBehaviour:
   m_ObjectHideFlags: 0

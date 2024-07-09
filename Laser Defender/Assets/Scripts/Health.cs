@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    DamageDealing damageDealingScriptOfTheMostRecentAttacker;
+    DamageDealing damageDealing;
     [SerializeField] float health = 100f;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        damageDealingScriptOfTheMostRecentAttacker = collider.GetComponent<DamageDealing>();
-        if (damageDealingScriptOfTheMostRecentAttacker != null)
+        Debug.Log("collision between layer: ");
+        Debug.Log(LayerMask.LayerToName(collider.gameObject.layer));
+        Debug.Log(" and layer: ");
+        Debug.Log(LayerMask.LayerToName(this.gameObject.layer));
+        damageDealing = collider.GetComponent<DamageDealing>();
+        if (damageDealing != null)
         {
-            int layer = this.gameObject.layer;
-            damageDealingScriptOfTheMostRecentAttacker.Hit(layer);
-            TakeDamage(damageDealingScriptOfTheMostRecentAttacker.GetDamage());
+            damageDealing.Hit();
+            TakeDamage(damageDealing.GetDamage());
         }
     }
 
