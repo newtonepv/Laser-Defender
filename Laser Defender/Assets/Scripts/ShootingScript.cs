@@ -7,6 +7,8 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] float shootingFrequency;
     [SerializeField] float lifeTime;
+    [SerializeField] bool autoShoot;
+    [SerializeField] float projSpeed;
     float shootingTime;
     Coroutine shootingCoroutine;
 
@@ -14,9 +16,23 @@ public class ShootingScript : MonoBehaviour
     {
         shootingTime = 1 / shootingFrequency;
     }
-
+    private void Start()
+    {
+        if (autoShoot && shootingCoroutine == null)
+        {
+            shootingCoroutine = StartCoroutine(ShootingRoutine());
+        }
+    }
+    private void OnDestroy()
+    {
+        StopShooting();
+    }
     public void StartShooting()
     {
+        if (autoShoot)
+        {
+            return;
+        }
         if (shootingCoroutine == null)
         {
             shootingCoroutine = StartCoroutine(ShootingRoutine());
@@ -41,6 +57,11 @@ public class ShootingScript : MonoBehaviour
                                             transform.position,
                                             Quaternion.identity
                                             );
+            Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = transform.up * projSpeed;
+            }
             Destroy(instance, lifeTime);
             yield return new WaitForSeconds(shootingTime);
         }

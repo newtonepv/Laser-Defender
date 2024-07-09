@@ -203,8 +203,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1625208217544360693, guid: 174df78dd94bfa741a8a71e88f32e54f, type: 3}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  shootingFrequency: 10
+  shootingFrequency: 4.96
+  lifeTime: 3.22
+  autoShoot: 0
+  projSpeed: 8.14
 --- !u!114 &3353443968199065867
 MonoBehaviour:
   m_ObjectHideFlags: 0

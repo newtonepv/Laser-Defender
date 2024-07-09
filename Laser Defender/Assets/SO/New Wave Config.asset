@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: New Wave Config
   m_EditorClassIdentifier: 
   pathPrefab: {fileID: 8298709662131670719, guid: 38144e7eb6f31f8418329a6ebf552268, type: 3}
-  moveSpeed: 5
+  moveSpeed: 3.19
   enemyPrefabs:
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
-  delayBetweenEnemiesVariance: 0.21
-  delayBetweenEnemies: 0.52
+  delayBetweenEnemiesVariance: 0.42
+  delayBetweenEnemies: 0.85
   minDelayBetweenEnemies: 0.21

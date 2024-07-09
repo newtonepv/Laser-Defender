@@ -251,5 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
-  rotation: {x: 0, y: 0, z: 59.49, w: 0}
-  shootingFrequency: 0.33
+  shootingFrequency: 0.92
+  lifeTime: 1.35
+  autoShoot: 1
+  projSpeed: -4.66
