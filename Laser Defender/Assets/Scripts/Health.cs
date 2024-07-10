@@ -11,9 +11,10 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem expEffect;
     [SerializeField] bool hasCameraControl;
     CameraShake cameraShake;
-
+    AudioPlayerScript playerScript;
     void Start()
     {
+        playerScript = FindObjectOfType<AudioPlayerScript>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -29,7 +30,9 @@ public class Health : MonoBehaviour
             ActivateExplosionEffect(collider.gameObject.transform.position);
 
             ActivateCameraShakeOrNot();
-            
+
+            playerScript.PlayImpactAudio();
+
             TakeDamage(damageDealing.GetDamage());
             damageDealing.Hit();
         }
@@ -50,6 +53,7 @@ public class Health : MonoBehaviour
         if (health <= 0 && this.gameObject!=null)
         {
             health = 0;
+            playerScript.PlayExplosionAudio();
             Destroy(gameObject);
         }
     }

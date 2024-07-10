@@ -16,6 +16,7 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] float minimumShootingDelay;
     float shootingTime;
     Coroutine shootingCoroutine;
+    AudioPlayerScript playerScript;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class ShootingScript : MonoBehaviour
     }
     private void Start()
     {
+        playerScript= FindObjectOfType<AudioPlayerScript>();
         if (autoShoot && shootingCoroutine == null)
         {
             shootingCoroutine = StartCoroutine(ShootingRoutine());
@@ -62,6 +64,7 @@ public class ShootingScript : MonoBehaviour
     {
         while (true)
         {
+            playerScript.PlayShootAudio();
             GameObject instance =Instantiate(projectile,
                                             transform.position,
                                             Quaternion.identity
