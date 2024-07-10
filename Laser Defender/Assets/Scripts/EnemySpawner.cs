@@ -30,9 +30,10 @@ public class EnemySpawner : MonoBehaviour
     {
             for (int i = 0; i < currentWave.GetEnemyCount(); i++)
             {
-                Instantiate(currentWave.GetEnemyAtIndex(i),
+                GameObject enemyPrefab= currentWave.GetEnemyAtIndex(i);
+                Instantiate(enemyPrefab,
                             currentWave.GetFirstWayPoint().position,
-                            Quaternion.identity,
+                            enemyPrefab.transform.rotation,
                             transform);
 
                 yield return new WaitForSeconds(currentWave.GetDelayBetweenEnemies());

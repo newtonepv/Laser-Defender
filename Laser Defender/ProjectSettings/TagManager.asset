@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 279072215
+    locked: 0
   - name: Proyectiles
     uniqueID: 1869790307
     locked: 0
@@ -49,4 +52,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2028652561
+    locked: 0
+  - name: explosions
+    uniqueID: 3986291851
     locked: 0

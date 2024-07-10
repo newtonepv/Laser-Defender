@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] GameObject projectile;
-    [SerializeField] float shootingFrequency;
+    [SerializeField] float shootingDelay;
     [SerializeField] float lifeTime;
-    [SerializeField] bool autoShoot;
     [SerializeField] float projSpeed;
+    [Header("AI")]
+    [SerializeField] bool autoShoot;
+    [SerializeField] float shootingDelayVariation;
+    [SerializeField] float minimumShootingDelay;
     float shootingTime;
     Coroutine shootingCoroutine;
 
     private void Awake()
     {
-        shootingTime = 1 / shootingFrequency;
+        if(shootingDelay-shootingDelayVariation < minimumShootingDelay)
+        {
+            shootingDelayVariation = shootingDelay-minimumShootingDelay ;
+        }
+        shootingTime = Random.Range(shootingDelay - shootingDelayVariation,
+                                    shootingDelay + shootingDelayVariation);
     }
     private void Start()
     {
@@ -52,7 +62,6 @@ public class ShootingScript : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Shooting");
             GameObject instance =Instantiate(projectile,
                                             transform.position,
                                             Quaternion.identity

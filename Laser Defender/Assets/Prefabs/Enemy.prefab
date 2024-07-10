@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2245673303909221469}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5496671833470738198}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &2530218576901744881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,14 +114,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2758785618327381718}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4980281687715231700}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &-1779488637050420245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  expEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
+  hasCameraControl: 0
 --- !u!114 &-3570539320736980846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
-  shootingFrequency: 0.92
-  lifeTime: 1.35
+  shootingDelay: 1.07
+  lifeTime: 2.99
+  projSpeed: 4.71
   autoShoot: 1
-  projSpeed: -4.66
+  shootingDelayVariation: 0.23
+  minimumShootingDelay: 0.75
