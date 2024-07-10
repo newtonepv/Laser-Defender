@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1869790307
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5396bcfda9e177147b9fb461da2a95a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,3 +185,6 @@ MonoBehaviour:
   health: 1
   expEffect: {fileID: 6296845429898559621, guid: ac0a4e5e6d05b43448f5c71f784dcecb, type: 3}
   hasCameraControl: 0
+  hasLogControl: 0
+  isProjectile: 1
+  onKilledScoreIncrement: 0

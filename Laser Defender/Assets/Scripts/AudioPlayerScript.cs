@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioPlayerScript : MonoBehaviour
@@ -13,6 +14,27 @@ public class AudioPlayerScript : MonoBehaviour
     [Header("Explosion")]
     [SerializeField] AudioClip explosionAudio;
     [Range(0f, 1f)] public float explosionAudioVolume;
+    [Header("Projectile Explosion")]
+    [SerializeField] AudioClip projectileExplosionAudio;
+    [Range(0f, 1f)] public float projectileExplosionVolume;
+    static AudioPlayerScript instance;
+    private void Awake()
+    {
+        Singleton();
+    }
+    void Singleton()
+    {
+        if (instance != null)
+        {
+            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     void Start()
     {
 
@@ -25,9 +47,16 @@ public class AudioPlayerScript : MonoBehaviour
     {
         PlayClip(impactAudio,impactAudioVolume);
     }
-    public void PlayExplosionAudio()
+    public void PlayExplosionAudio(bool isProjectile)
     {
-        PlayClip(explosionAudio, explosionAudioVolume);
+        if (isProjectile)
+        {
+            PlayClip(projectileExplosionAudio, projectileExplosionVolume);
+        }
+        else
+        {
+            PlayClip(explosionAudio, explosionAudioVolume);
+        }
     }
 
     void PlayClip(AudioClip clip, float volume)

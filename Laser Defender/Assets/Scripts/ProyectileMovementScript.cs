@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ProyectileMovementScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] bool spins;
+    [SerializeField] float spinningSpeed;
     void Start()
     {
         
@@ -13,6 +14,6 @@ public class ProyectileMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, 0, spinningSpeed * Time.deltaTime);
     }
 }

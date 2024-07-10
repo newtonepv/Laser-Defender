@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float mooveSpeed;
     private float[] yBounds;
     private float[] xBounds;
-    public float trim;
+    public float trimX;
+    public float trimY;
     private Vector2 moveDirection;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
         Camera mainCam = Camera.main;
         Vector2 minPoint = mainCam.ViewportToWorldPoint(new Vector2(0,0));
         Vector2 maxPoint = mainCam.ViewportToWorldPoint(new Vector2(1, 1));
-        yBounds = new float[] { minPoint.y + trim, maxPoint.y - trim };
-        xBounds = new float[] { minPoint.x + trim, maxPoint.x - trim };
+        yBounds = new float[] { minPoint.y + trimY, maxPoint.y - trimY };
+        xBounds = new float[] { minPoint.x + trimX, maxPoint.x - trimX };
     }
     // Update is called once per frame
     void Update()

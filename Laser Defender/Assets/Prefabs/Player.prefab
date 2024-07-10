@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2028652561
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e0e13dce960b4bb4db995b56a98b0c39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -192,6 +192,10 @@ MonoBehaviour:
   health: 100
   expEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
   hasCameraControl: 1
+  isPlayer: 1
+  hasLogControl: 1
+  isProjectile: 0
+  onKilledScoreIncrement: 0
 --- !u!114 &-5775181701139148837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,9 +209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1625208217544360693, guid: 174df78dd94bfa741a8a71e88f32e54f, type: 3}
-  shootingDelay: 0.54
-  lifeTime: 3.22
-  projSpeed: 8.14
+  shootingDelay: 0.18
+  lifeTime: 3.07
+  projSpeed: 9.97
   autoShoot: 0
   shootingDelayVariation: 0
   minimumShootingDelay: 0
@@ -317,8 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc9049598e40a2439ee5d175165339a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mooveSpeed: 8
-  trim: 1
+  mooveSpeed: 6.7
+  trimX: 0.5
+  trimY: 1.3
 --- !u!50 &1512851141015655821
 Rigidbody2D:
   serializedVersion: 4
