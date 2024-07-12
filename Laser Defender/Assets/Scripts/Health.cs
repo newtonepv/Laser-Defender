@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float health = 100f;
+    float health;
+    [SerializeField] float maxHealth = 200f;
     [SerializeField] ParticleSystem expEffect;
     [SerializeField] bool hasCameraControl;
     [SerializeField] bool isPlayer;
@@ -22,6 +23,10 @@ public class Health : MonoBehaviour
     DamageDealing damageDealing;
     UiScript uiScript;
     SceneManagerScript sceneManagerScript;
+    private void Awake()
+    {
+        health=maxHealth;
+    }
     void Start()
     {
         playerScript = FindObjectOfType<AudioPlayerScript>();
@@ -52,9 +57,9 @@ public class Health : MonoBehaviour
             playerScript.PlayImpactAudio();
 
             TakeDamage(damageDealing.GetDamage());
+
             damageDealing.Hit();
 
-            PrintHealth();
         }
     }
 
@@ -68,8 +73,7 @@ public class Health : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
-
-        health -= damage;
+        SetHealth(health - damage);
 
         if (health <= 0 && this.gameObject!=null)
         {
@@ -105,6 +109,23 @@ public class Health : MonoBehaviour
         {
             uiScript.SetHealth(GetHealth()/200);
         }
+    }
+    public void Heal(float deltaHealth)
+    {
+        if (health + deltaHealth > maxHealth)
+        {
+            SetHealth(maxHealth);
+        }
+        else if (health > 0)
+        {
+            SetHealth(health + deltaHealth);
+        }
+    
+    }
+    void SetHealth(float health)
+    {
+        this.health = health;
+        PrintHealth();
     }
     void incrementScore()
     {

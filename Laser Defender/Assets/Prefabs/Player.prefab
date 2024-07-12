@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7955746464485977197}
+  - component: {fileID: -9102117302189019837}
   - component: {fileID: 6822945050822283992}
   - component: {fileID: 2277705447485249760}
   - component: {fileID: -5775181701139148837}
@@ -123,6 +124,18 @@ Transform:
   - {fileID: 8641125630346664366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9102117302189019837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7456818049294719897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6200d9a7052d06e4d8c895fa1377f0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &6822945050822283992
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38981888119c7c4d9ed525935453577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 200
   expEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
   hasCameraControl: 1
   isPlayer: 1
@@ -208,10 +221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6d6317e95d9c74c8a11384d7e8e176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1625208217544360693, guid: 174df78dd94bfa741a8a71e88f32e54f, type: 3}
-  shootingDelay: 0.18
+  projectiles:
+  - {fileID: 1625208217544360693, guid: 174df78dd94bfa741a8a71e88f32e54f, type: 3}
+  - {fileID: 1625208217544360693, guid: 092ce185e8a4e744eb384bce6d968b69, type: 3}
+  - {fileID: 1625208217544360693, guid: 7926d879abe0d2b47ad32e1ed68b98e4, type: 3}
+  pesos: 010000000500000014000000
+  shootingDelay: 0.36
   lifeTime: 3.07
   projSpeed: 9.97
+  randomShootingOrder: 0
   autoShoot: 0
   shootingDelayVariation: 0
   minimumShootingDelay: 0

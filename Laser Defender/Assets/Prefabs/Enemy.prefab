@@ -237,10 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38981888119c7c4d9ed525935453577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 89
   expEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
   hasCameraControl: 0
+  isPlayer: 0
   hasLogControl: 0
+  isProjectile: 0
   onKilledScoreIncrement: 10
 --- !u!114 &-3570539320736980846
 MonoBehaviour:
@@ -254,10 +256,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6d6317e95d9c74c8a11384d7e8e176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
+  projectiles:
+  - {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
+  pesos: 
   shootingDelay: 1.07
   lifeTime: 2.99
   projSpeed: 4.71
+  randomShootingOrder: 0
   autoShoot: 1
   shootingDelayVariation: 0.23
   minimumShootingDelay: 0.75
