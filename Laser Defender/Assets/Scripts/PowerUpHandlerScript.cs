@@ -10,6 +10,8 @@ public class PowerUpHandlerScript : MonoBehaviour
     ShootingScript shootingScript;
     UiScript uiScript;
     Coroutine shootingDelayChange;
+    Coroutine shieldExisting;
+    [SerializeField] GameObject shieldPrefab;
     private void Awake()
     {
         health = GetComponent<Health>();
@@ -31,6 +33,10 @@ public class PowerUpHandlerScript : MonoBehaviour
             else if (id == 1)
             {
                 HandleShootingSpeedUp(powerUp.GetShootingDelay(), powerUp.GetDuration(), powerUp.GetSprite());
+            }
+            else if (id == 2)
+            {
+                HandleShield(powerUp.GetDuration(), powerUp.GetSprite());
             }
             Destroy(collision.gameObject);
         }
@@ -78,6 +84,50 @@ public class PowerUpHandlerScript : MonoBehaviour
         }
         shootingScript.UpdateShootingTime(normalDelay);
     }
+    private void HandleShield(float time, Sprite shieldImage)
+    {
+        if (shieldExisting != null)
+        {
+            StopCoroutine(shieldExisting);
+            shieldExisting = StartCoroutine(StartShield(time, shieldImage));
+        }
+        else
+        {
+            shieldExisting = StartCoroutine(StartShield(time, shieldImage));
+        }
+    }
+
+    private IEnumerator StartShield(float time, Sprite shieldImage)
+    {
+        GameObject instance = Instantiate(shieldPrefab,
+                               transform.position,
+                               Quaternion.identity);
+
+        if (uiScript != null)
+        {
+
+            uiScript.SetPowerUpImage(shieldImage);
+
+        }
+
+        yield return new WaitForSeconds(time);
+        if (instance.TryGetComponent<ShieldScript>(out ShieldScript script)) { 
+        script.ActivateExplosionEffect(transform.position);
+        }
+
+        if (uiScript != null)
+        {
+
+            uiScript.SetPowerUpImage(null);
+
+        }
+        Destroy(instance);
+    }
+
+    /*instance = Instantiate(projectiles[actualIndex],
+                                           transform.position,
+                                           Quaternion.identity
+                                           );*/
     void Update()
     {
         

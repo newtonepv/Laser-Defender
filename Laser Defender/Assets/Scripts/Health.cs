@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     [SerializeField] bool isPlayer;
     [SerializeField] bool hasLogControl;
     [SerializeField] bool isProjectile;
+    [SerializeField] bool isShield;
 
 
     [Header("Audio")]
@@ -64,10 +65,7 @@ public class Health : MonoBehaviour
 
             ActivateCameraShakeOrNot();
 
-            if (!isProjectile)
-            {
-                playerScript.PlayClip(impactAudio, impactAudioVolume);
-            }
+            PlayImpactClip();
 
             TakeDamage(damageDealing.GetDamage());
 
@@ -75,7 +73,13 @@ public class Health : MonoBehaviour
 
         }
     }
-
+    void PlayImpactClip()
+    {
+        if (!isProjectile&& impactAudio)
+        {
+            playerScript.PlayClip(impactAudio, impactAudioVolume);
+        }
+    }
     private void ActivateCameraShakeOrNot()
     {
         if (hasCameraControl && cameraShake != null)
@@ -86,11 +90,14 @@ public class Health : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
-        SetHealth(health - damage);
-
-        if (health <= 0 && this.gameObject!=null)
+        if (!isShield)
         {
-            Die();
+            SetHealth(health - damage);
+
+            if (health <= 0 && this.gameObject != null)
+            {
+                Die();
+            }
         }
 
     }
@@ -122,7 +129,7 @@ public class Health : MonoBehaviour
             Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constant);
         }
     }
-    private void ActivateExplosionEffect(Vector3 location)
+    public void ActivateExplosionEffect(Vector3 location)
     {
         if (explosionEffect != null)
         {

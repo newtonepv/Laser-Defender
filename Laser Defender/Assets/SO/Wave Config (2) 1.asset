@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a492ced0f8099c643abecb7bc8baef45, type: 3}
+  m_Name: Wave Config (2) 1
+  m_EditorClassIdentifier: 
+  pathPrefab: {fileID: 4104600413687769912, guid: d2589ad229d36da4c9616ab78c52fe95, type: 3}
+  moveSpeed: 5.04
+  enemyPrefabs:
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  - {fileID: 8962779923610220752, guid: 1f23c2e6cd394e648ac03fae67b13328, type: 3}
+  delayBetweenEnemiesVariance: 0.38
+  delayBetweenEnemies: 0.86
+  minDelayBetweenEnemies: 0.12

@@ -244,8 +244,9 @@ MonoBehaviour:
   isPlayer: 0
   hasLogControl: 0
   isProjectile: 0
+  isShield: 0
   explosionAudio: {fileID: 8300000, guid: 630f0c49c2f69534a957c78c983d15fd, type: 3}
-  explosionAudioVolume: 0.347
+  explosionAudioVolume: 0.111
   impactAudio: {fileID: 8300000, guid: cd7c09fdfffc67c4c8853ba5ab6c492f, type: 3}
   impactAudioVolume: 0.167
   onKilledScoreIncrement: 15
@@ -264,7 +265,7 @@ MonoBehaviour:
   projectiles:
   - {fileID: 8962779923610220752, guid: a1ece2d61d6a7944ba007c4a89c1edb3, type: 3}
   pesos: 
-  shootingDelay: 2.02
+  shootingDelay: 1.3
   lifeTime: 2.99
   projSpeed: 5.9
   randomShootingOrder: 0

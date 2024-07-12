@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.33, y: 1.33, z: 1.33}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5496671833470738198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1231799035
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea2fb7b82dc1dfc4eb279ec4b48d4a5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75741bb14c1664749ba662874b61f18c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 630448708553956578}
   - component: {fileID: -3570539320736980846}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38981888119c7c4d9ed525935453577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 89
+  maxHealth: 235.4
   impactEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
   explosionEffect: {fileID: 5746502564589789118, guid: eb6325fff1083e340b8859278397d421, type: 3}
   hasCameraControl: 0
@@ -245,11 +245,11 @@ MonoBehaviour:
   hasLogControl: 0
   isProjectile: 0
   isShield: 0
-  explosionAudio: {fileID: 8300000, guid: 630f0c49c2f69534a957c78c983d15fd, type: 3}
+  explosionAudio: {fileID: 8300000, guid: 071d075c9cc243948a58b8292d000662, type: 3}
   explosionAudioVolume: 0.111
   impactAudio: {fileID: 8300000, guid: cd7c09fdfffc67c4c8853ba5ab6c492f, type: 3}
   impactAudioVolume: 0.167
-  onKilledScoreIncrement: 10
+  onKilledScoreIncrement: 25
 --- !u!114 &-3570539320736980846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,13 +264,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles:
   - {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
-  pesos: 
-  shootingDelay: 0.69
+  - {fileID: 8962779923610220752, guid: a1ece2d61d6a7944ba007c4a89c1edb3, type: 3}
+  - {fileID: 8962779923610220752, guid: 514591f9d14233141af5031bb87a50d2, type: 3}
+  pesos: 070000000300000001000000
+  shootingDelay: 0.88
   lifeTime: 2.99
-  projSpeed: 4.71
-  randomShootingOrder: 0
-  shootAudio: {fileID: 8300000, guid: fb114663c39f2e543a68ac5e63272a1b, type: 3}
-  shootAudioVolume: 0.215
+  projSpeed: 3.91
+  randomShootingOrder: 1
+  shootAudio: {fileID: 8300000, guid: 6663272baf6401044ac03c63160ed349, type: 3}
+  shootAudioVolume: 0.284
   autoShoot: 1
-  shootingDelayVariation: 0.23
-  minimumShootingDelay: 0.75
+  shootingDelayVariation: 0.77
+  minimumShootingDelay: 0.45

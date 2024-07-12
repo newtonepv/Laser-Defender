@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6200d9a7052d06e4d8c895fa1377f0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldPrefab: {fileID: 70771377550393062, guid: df683304a6cb56f41953a332f2aeede3, type: 3}
 --- !u!60 &6822945050822283992
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
   isPlayer: 1
   hasLogControl: 1
   isProjectile: 0
+  isShield: 0
   explosionAudio: {fileID: 8300000, guid: 61276d5f4711ff14f8df7815d2e7c712, type: 3}
   explosionAudioVolume: 0.285
   impactAudio: {fileID: 8300000, guid: bd76843ca9a7f9b49b546eb5e8efcd43, type: 3}
