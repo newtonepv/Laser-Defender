@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5746502564589789118}
   - component: {fileID: 8691786516998371846}
   m_Layer: 0
-  m_Name: ExplosionParticles
+  m_Name: PlayeImpactParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.19
+      scalar: 0.34
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 53.68
+      scalar: 61.74
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1317,21 +1317,21 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.40784314, g: 0, b: 0.19215687, a: 1}
-        key1: {r: 0.33641866, g: 0.3567357, b: 0.5283019, a: 1}
-        key2: {r: 0.4764151, g: 0.8213651, b: 1, a: 0.3784842}
-        key3: {r: 0.61552155, g: 0.87359947, b: 0.9811321, a: 1}
-        key4: {r: 0.3372549, g: 0.35686275, b: 0.5294118, a: 0}
-        key5: {r: 0.4056604, g: 0, b: 0.190899, a: 0}
-        key6: {r: 1, g: 0, b: 0.47008705, a: 0}
+        key0: {r: 0.9811321, g: 0, b: 0, a: 1}
+        key1: {r: 0.61552155, g: 0.87359947, b: 0.9811321, a: 1}
+        key2: {r: 0.33641866, g: 0.3567357, b: 0.5283019, a: 0.3784842}
+        key3: {r: 0.3372549, g: 0.35686275, b: 0.5294118, a: 1}
+        key4: {r: 1, g: 0, b: 0.086538315, a: 0}
+        key5: {r: 1, g: 0.26897636, b: 0.023584902, a: 0}
+        key6: {r: 0.4056604, g: 0, b: 0.190899, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 6361
-        ctime1: 24287
-        ctime2: 31418
-        ctime3: 35466
-        ctime4: 42983
-        ctime5: 60909
-        ctime6: 60909
+        ctime0: 7903
+        ctime1: 22166
+        ctime2: 29491
+        ctime3: 42983
+        ctime4: 55705
+        ctime5: 61102
+        ctime6: 62066
         ctime7: 0
         atime0: 3277
         atime1: 62644

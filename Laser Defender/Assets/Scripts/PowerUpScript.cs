@@ -12,12 +12,14 @@ public class PowerUpScript : MonoBehaviour
     
      */
     [SerializeField] int PowerUpID;
+    [SerializeField] float powerUpDuration;
+    [SerializeField] Sprite powerUpSprite;
     [Header("For ID 0")]
     [SerializeField] float HealthIncrease;
     
     [Header("For ID 1")]
     [SerializeField] float shootingDelay;
-    [SerializeField] float shootingDelayDuration;
+
 
 
     public int GetPowerUpID()
@@ -35,7 +37,11 @@ public class PowerUpScript : MonoBehaviour
     }
     public float GetDuration()
     {
-        return shootingDelayDuration;
+        return powerUpDuration;
+    }
+    public Sprite GetSprite()
+    {
+        return powerUpSprite;
     }
 
 }

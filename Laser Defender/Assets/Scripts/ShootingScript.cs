@@ -29,21 +29,21 @@ public class ShootingScript : MonoBehaviour
     int projectileToShootID = 0;
     float shootingTime;
     Coroutine shootingCoroutine;
-    Coroutine shootingDelayChange;
     AudioPlayerScript playerScript;
 
     private void Awake()
     {
-        UpdateShootingTime();
+        UpdateShootingTime(shootingDelay);
     }
-    void UpdateShootingTime()
+    public float GetShootingDelay() { return shootingDelay; }
+    public void UpdateShootingTime(float newDelay)
     {
-        if (shootingDelay - shootingDelayVariation < minimumShootingDelay)
+        if (newDelay - shootingDelayVariation < minimumShootingDelay)
         {
-            shootingDelayVariation = shootingDelay - minimumShootingDelay;
+            shootingDelayVariation = newDelay - minimumShootingDelay;
         }
-        shootingTime = UnityEngine.Random.Range(shootingDelay - shootingDelayVariation,
-                                    shootingDelay + shootingDelayVariation);
+        shootingTime = UnityEngine.Random.Range(newDelay - shootingDelayVariation,
+                                    newDelay + shootingDelayVariation);
     }
     private void Start()
     {
@@ -77,29 +77,8 @@ public class ShootingScript : MonoBehaviour
             shootingCoroutine = null;
         }
     }
-    public void TemporarelySetShootingDelay(float newDelay, float time)
-    {
-
-
-        if (shootingDelayChange != null)
-        {
-            StopCoroutine (shootingDelayChange);
-            shootingDelayChange = StartCoroutine(ChangeShootingDelay(newDelay, time));
-        }
-        else
-        {
-            shootingDelayChange = StartCoroutine(ChangeShootingDelay(newDelay, time));
-        }
-    }
-    private IEnumerator ChangeShootingDelay(float newDelay, float time)
-    {
-        float normalDelay = shootingDelay;
-        shootingDelay = newDelay;
-        UpdateShootingTime();
-        yield return new WaitForSeconds(time);
-        shootingDelay = normalDelay;
-        UpdateShootingTime();
-    }
+    
+    
     private IEnumerator ShootingRoutine()
     {
         while (true)

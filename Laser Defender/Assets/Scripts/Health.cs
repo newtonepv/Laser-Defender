@@ -8,7 +8,8 @@ public class Health : MonoBehaviour
 {
     float health;
     [SerializeField] float maxHealth = 200f;
-    [SerializeField] ParticleSystem expEffect;
+    [SerializeField] ParticleSystem impactEffect;
+    [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] bool hasCameraControl;
     [SerializeField] bool isPlayer;
     [SerializeField] bool hasLogControl;
@@ -59,7 +60,7 @@ public class Health : MonoBehaviour
         {
 
 
-            ActivateExplosionEffect(collider.gameObject.transform.position);
+            ActivateImpactEffect(collider.gameObject.transform.position);
 
             ActivateCameraShakeOrNot();
 
@@ -95,6 +96,11 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
+        if (explosionEffect != null)
+        {
+            ActivateExplosionEffect(transform.position);
+
+        }
         if (pointsCounter != null)
         {
             incrementScore();
@@ -108,15 +114,22 @@ public class Health : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    private void ActivateExplosionEffect(Vector3 location)
+    private void ActivateImpactEffect(Vector3 location)
     {
-        if (expEffect != null)
+        if (impactEffect != null)
         {
-            ParticleSystem particles = Instantiate(expEffect, location, expEffect.transform.rotation);
+            ParticleSystem particles = Instantiate(impactEffect, location, impactEffect.transform.rotation);
             Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constant);
         }
     }
-
+    private void ActivateExplosionEffect(Vector3 location)
+    {
+        if (explosionEffect != null)
+        {
+            ParticleSystem particles = Instantiate(explosionEffect, location, explosionEffect.transform.rotation);
+            Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constant);
+        }
+    }
     private void PrintHealth()
     {
         if (hasLogControl && uiScript !=null)

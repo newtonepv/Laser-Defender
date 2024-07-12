@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class UiScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] Sprite spriteDebug;
     [SerializeField] Slider healthSlider;
+    [SerializeField] Image powerUpPanel;
     void Start()
     {
     }
@@ -20,6 +22,11 @@ public class UiScript : MonoBehaviour
     public void SetScore(float score)
     {
         textMeshProUGUI.text = score.ToString("000000000");
+    }
+    public void SetPowerUpImage(Sprite sprite)
+    {
+        powerUpPanel.sprite = sprite;
+        Debug.Log("elpepe");
     }
     void Update()
     {

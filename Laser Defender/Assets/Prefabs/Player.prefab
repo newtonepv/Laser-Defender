@@ -203,7 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  expEffect: {fileID: 5746502564589789118, guid: dc12de44365b74a4890af7e08b6937ae, type: 3}
+  impactEffect: {fileID: 5746502564589789118, guid: 27633ecaccfb3b947b661c8b6cf42bc4, type: 3}
+  explosionEffect: {fileID: 5746502564589789118, guid: 7ee39cd4e93249a4eb5165e2b28df7f5, type: 3}
   hasCameraControl: 1
   isPlayer: 1
   hasLogControl: 1
