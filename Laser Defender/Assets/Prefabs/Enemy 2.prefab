@@ -116,7 +116,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.58, y: 1.58, z: 1.58}
+  m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4980281687715231700}
@@ -266,8 +266,8 @@ MonoBehaviour:
   - {fileID: 8962779923610220752, guid: 21a60667c69339b40b07503a45cc8f8a, type: 3}
   - {fileID: 8962779923610220752, guid: a1ece2d61d6a7944ba007c4a89c1edb3, type: 3}
   - {fileID: 8962779923610220752, guid: 514591f9d14233141af5031bb87a50d2, type: 3}
-  pesos: 070000000300000001000000
-  shootingDelay: 0.88
+  pesos: 070000000300000002000000
+  shootingDelay: 0.58
   lifeTime: 2.99
   projSpeed: 3.91
   randomShootingOrder: 1
