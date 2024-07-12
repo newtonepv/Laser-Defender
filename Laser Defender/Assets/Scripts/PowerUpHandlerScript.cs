@@ -28,7 +28,7 @@ public class PowerUpHandlerScript : MonoBehaviour
             }
             else if (id == 1)
             {
-                HandleShootingSpeedUp();
+                HandleShootingSpeedUp(powerUp.GetShootingDelay(), powerUp.GetDuration());
             }
             Destroy(collision.gameObject);
         }
@@ -41,10 +41,11 @@ public class PowerUpHandlerScript : MonoBehaviour
             health.Heal(deltaHealth);
         }
     }
-    private void HandleShootingSpeedUp()
+    private void HandleShootingSpeedUp(float shootingDelay, float shootingDelayDuration)
     {
         if (shootingScript != null)
         {
+            shootingScript.TemporarelySetShootingDelay(shootingDelay, shootingDelayDuration);
         }
     }
     void Update()

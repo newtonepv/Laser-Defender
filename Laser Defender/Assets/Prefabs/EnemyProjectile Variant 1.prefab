@@ -232,4 +232,8 @@ MonoBehaviour:
   isPlayer: 0
   hasLogControl: 0
   isProjectile: 1
+  explosionAudio: {fileID: 8300000, guid: efdb48f3cb01a654aa179cedf34aae62, type: 3}
+  explosionAudioVolume: 0.333
+  impactAudio: {fileID: 8300000, guid: 1073f5deab6b7064ba9acfce4561c91d, type: 3}
+  impactAudioVolume: 0.09
   onKilledScoreIncrement: 0

@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b47ed3e1d7672e42b98734a5d34f4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpID: 0
+  PowerUpID: 1
   HealthIncrease: 50.13
-  shootingSpeed: 0
-  shootingSpeedDuration: 0
+  shootingDelay: 0.14
+  shootingDelayDuration: 6

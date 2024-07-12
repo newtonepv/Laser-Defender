@@ -14,6 +14,10 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] float projSpeed;
     [SerializeField] bool randomShootingOrder;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip shootAudio;
+    [Range(0f, 1f)] public float shootAudioVolume;
+
 
     [Header("AI")]
     [SerializeField] bool autoShoot;
@@ -25,13 +29,18 @@ public class ShootingScript : MonoBehaviour
     int projectileToShootID = 0;
     float shootingTime;
     Coroutine shootingCoroutine;
+    Coroutine shootingDelayChange;
     AudioPlayerScript playerScript;
 
     private void Awake()
     {
-        if(shootingDelay-shootingDelayVariation < minimumShootingDelay)
+        UpdateShootingTime();
+    }
+    void UpdateShootingTime()
+    {
+        if (shootingDelay - shootingDelayVariation < minimumShootingDelay)
         {
-            shootingDelayVariation = shootingDelay-minimumShootingDelay ;
+            shootingDelayVariation = shootingDelay - minimumShootingDelay;
         }
         shootingTime = UnityEngine.Random.Range(shootingDelay - shootingDelayVariation,
                                     shootingDelay + shootingDelayVariation);
@@ -68,12 +77,34 @@ public class ShootingScript : MonoBehaviour
             shootingCoroutine = null;
         }
     }
+    public void TemporarelySetShootingDelay(float newDelay, float time)
+    {
 
+
+        if (shootingDelayChange != null)
+        {
+            StopCoroutine (shootingDelayChange);
+            shootingDelayChange = StartCoroutine(ChangeShootingDelay(newDelay, time));
+        }
+        else
+        {
+            shootingDelayChange = StartCoroutine(ChangeShootingDelay(newDelay, time));
+        }
+    }
+    private IEnumerator ChangeShootingDelay(float newDelay, float time)
+    {
+        float normalDelay = shootingDelay;
+        shootingDelay = newDelay;
+        UpdateShootingTime();
+        yield return new WaitForSeconds(time);
+        shootingDelay = normalDelay;
+        UpdateShootingTime();
+    }
     private IEnumerator ShootingRoutine()
     {
         while (true)
         {
-            playerScript.PlayShootAudio();
+            playerScript.PlayClip(shootAudio, shootAudioVolume);
             GameObject instance;
             if (randomShootingOrder)
             {

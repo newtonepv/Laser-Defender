@@ -16,8 +16,8 @@ public class PowerUpScript : MonoBehaviour
     [SerializeField] float HealthIncrease;
     
     [Header("For ID 1")]
-    [SerializeField] float shootingSpeed;
-    [SerializeField] float shootingSpeedDuration;
+    [SerializeField] float shootingDelay;
+    [SerializeField] float shootingDelayDuration;
 
 
     public int GetPowerUpID()
@@ -29,13 +29,13 @@ public class PowerUpScript : MonoBehaviour
         return HealthIncrease;
     }
 
-    public float GetShootingSpeed()
+    public float GetShootingDelay()
     {
-        return shootingSpeed;
+        return shootingDelay;
     }
     public float GetDuration()
     {
-        return shootingSpeedDuration;
+        return shootingDelayDuration;
     }
 
 }

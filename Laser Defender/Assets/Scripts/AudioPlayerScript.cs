@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AudioPlayerScript : MonoBehaviour
 {
+    /*
     [Header("Shooting")]
     [SerializeField] AudioClip shootAudio;
     [Range(0f, 1f)] public float shootAudioVolume;
@@ -16,7 +17,7 @@ public class AudioPlayerScript : MonoBehaviour
     [Range(0f, 1f)] public float explosionAudioVolume;
     [Header("Projectile Explosion")]
     [SerializeField] AudioClip projectileExplosionAudio;
-    [Range(0f, 1f)] public float projectileExplosionVolume;
+    [Range(0f, 1f)] public float projectileExplosionVolume;*/
     static AudioPlayerScript instance;
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class AudioPlayerScript : MonoBehaviour
     {
 
     }
-    public void PlayShootAudio()
+    /*public void PlayShootAudio()
     {
         PlayClip(shootAudio,shootAudioVolume);
     }
@@ -57,9 +58,9 @@ public class AudioPlayerScript : MonoBehaviour
         {
             PlayClip(explosionAudio, explosionAudioVolume);
         }
-    }
+    }*/
 
-    void PlayClip(AudioClip clip, float volume)
+    public void PlayClip(AudioClip clip, float volume)
     {
         if (clip != null)
         {

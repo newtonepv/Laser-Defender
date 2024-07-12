@@ -243,6 +243,10 @@ MonoBehaviour:
   isPlayer: 0
   hasLogControl: 0
   isProjectile: 0
+  explosionAudio: {fileID: 8300000, guid: 630f0c49c2f69534a957c78c983d15fd, type: 3}
+  explosionAudioVolume: 0.368
+  impactAudio: {fileID: 8300000, guid: cd7c09fdfffc67c4c8853ba5ab6c492f, type: 3}
+  impactAudioVolume: 0.167
   onKilledScoreIncrement: 10
 --- !u!114 &-3570539320736980846
 MonoBehaviour:
@@ -263,6 +267,8 @@ MonoBehaviour:
   lifeTime: 2.99
   projSpeed: 4.71
   randomShootingOrder: 0
+  shootAudio: {fileID: 8300000, guid: fb114663c39f2e543a68ac5e63272a1b, type: 3}
+  shootAudioVolume: 0.215
   autoShoot: 1
   shootingDelayVariation: 0.23
   minimumShootingDelay: 0.75

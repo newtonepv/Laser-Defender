@@ -14,6 +14,15 @@ public class Health : MonoBehaviour
     [SerializeField] bool hasLogControl;
     [SerializeField] bool isProjectile;
 
+
+    [Header("Audio")]
+    [SerializeField] AudioClip explosionAudio;
+    [Range(0f, 1f)] public float explosionAudioVolume;
+
+    [SerializeField] AudioClip impactAudio;
+    [Range(0f, 1f)] public float impactAudioVolume;
+
+
     [Header("EnemyOnly")]
     [SerializeField] float onKilledScoreIncrement;
 
@@ -54,7 +63,10 @@ public class Health : MonoBehaviour
 
             ActivateCameraShakeOrNot();
 
-            playerScript.PlayImpactAudio();
+            if (!isProjectile)
+            {
+                playerScript.PlayClip(impactAudio, impactAudioVolume);
+            }
 
             TakeDamage(damageDealing.GetDamage());
 
@@ -88,7 +100,9 @@ public class Health : MonoBehaviour
             incrementScore();
         }
         health = 0;
-        playerScript.PlayExplosionAudio(isProjectile);
+
+        playerScript.PlayClip(explosionAudio, explosionAudioVolume);
+
         if (isPlayer) {
         sceneManagerScript.LoadGameOver();
         }
