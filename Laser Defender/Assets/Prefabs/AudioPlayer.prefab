@@ -45,14 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be921ca032b6401438718aff9acde7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootAudio: {fileID: 8300000, guid: ede87fd14f51e7f48bd864d28c544891, type: 3}
-  shootAudioVolume: 0.209
-  impactAudio: {fileID: 8300000, guid: cd7c09fdfffc67c4c8853ba5ab6c492f, type: 3}
-  impactAudioVolume: 0.073
-  explosionAudio: {fileID: 8300000, guid: cd7c09fdfffc67c4c8853ba5ab6c492f, type: 3}
-  explosionAudioVolume: 0.182
-  projectileExplosionAudio: {fileID: 8300000, guid: 179ef2765b82410498fe0af43477f0bb, type: 3}
-  projectileExplosionVolume: 0.18
 --- !u!82 &5290023949057032518
 AudioSource:
   m_ObjectHideFlags: 0

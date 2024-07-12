@@ -248,7 +248,7 @@ MonoBehaviour:
   projSpeed: 5.9
   randomShootingOrder: 1
   shootAudio: {fileID: 8300000, guid: cc81a259eb11bbb47a8e1ff2b14f5d5a, type: 3}
-  shootAudioVolume: 0.431
+  shootAudioVolume: 0.188
   autoShoot: 1
   shootingDelayVariation: 2.28
   minimumShootingDelay: 0.45

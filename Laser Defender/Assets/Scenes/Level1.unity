@@ -1102,10 +1102,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2277705447485249760, guid: 80491a6d3b19c64498a48f0f3f2e0247, type: 3}
-      propertyPath: health
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 7456818049294719897, guid: 80491a6d3b19c64498a48f0f3f2e0247, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1264,10 +1260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpThrower
       objectReference: {fileID: 0}
-    - target: {fileID: 4715856590641437177, guid: e51bbf44712878f4d8b487061a533115, type: 3}
-      propertyPath: shootAudioVolume
-      value: 0.188
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1346,14 +1338,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2307593157705558697, guid: 2cb8e7255514e7348a764301ef6cc634, type: 3}
-      propertyPath: impactAudioVolume
-      value: 0.194
-      objectReference: {fileID: 0}
-    - target: {fileID: 2307593157705558697, guid: 2cb8e7255514e7348a764301ef6cc634, type: 3}
-      propertyPath: projectileExplosionVolume
-      value: 0.465
-      objectReference: {fileID: 0}
     - target: {fileID: 2384318489987122444, guid: 2cb8e7255514e7348a764301ef6cc634, type: 3}
       propertyPath: m_Name
       value: AudioPlayer
