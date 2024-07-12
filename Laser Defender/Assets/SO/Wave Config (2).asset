@@ -16,11 +16,14 @@ MonoBehaviour:
   moveSpeed: 5.04
   enemyPrefabs:
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
-  - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
+  - {fileID: 2758785618327381718, guid: f54d5bf1264364e46bda31aac2c3a0a1, type: 3}
   - {fileID: 2758785618327381718, guid: cb80f51afe4382d479d15c800713ab83, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
   - {fileID: 2758785618327381718, guid: cb80f51afe4382d479d15c800713ab83, type: 3}
   - {fileID: 2758785618327381718, guid: c978975b9fe18c8418109879761c9b19, type: 3}
+  - {fileID: 2758785618327381718, guid: f54d5bf1264364e46bda31aac2c3a0a1, type: 3}
+  - {fileID: 2758785618327381718, guid: cb80f51afe4382d479d15c800713ab83, type: 3}
+  - {fileID: 2758785618327381718, guid: f54d5bf1264364e46bda31aac2c3a0a1, type: 3}
   delayBetweenEnemiesVariance: 0.42
   delayBetweenEnemies: 0.85
   minDelayBetweenEnemies: 0.21
